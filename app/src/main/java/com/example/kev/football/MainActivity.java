@@ -17,9 +17,6 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        ((TextView) findViewById(R.id.txt_counter)).setText(counterTeam1.toString());
-//        ((TextView) findViewById(R.id.txt_counter2)).setText(counterTeam2.toString());
-//        Toast.makeText(this, "Старт", Toast.LENGTH_LONG).show();
     }
 
     public void onClickBtnAddTeam1(View view) {
@@ -103,6 +100,5 @@ public class MainActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.txt_counter)).setText(counterTeam1.toString());
         ((TextView) findViewById(R.id.txt_counter2)).setText(counterTeam2.toString());
         Log.d(TAG, "resetUI");
-        Toast.makeText(this, "reset", Toast.LENGTH_LONG).show();
     }
 }
