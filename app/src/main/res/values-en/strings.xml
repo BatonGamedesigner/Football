@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Football Scoreboard </string>
-    <string name="btn_team1">Spartak</string>
-    <string name="btn_team2">Zenith</string>
-    <string name="btn_reset">Reset Score</string>
-</resources>
