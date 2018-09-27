@@ -20,13 +20,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickBtnAddTeam1(View view) {
-        counterTeam1++;
+        if (counterTeam1 < 20) {
+            counterTeam1++;
+        } else {
+            Toast.makeText(this, "Максимальное количество голов не должно превышать 20", Toast.LENGTH_LONG).show();
+        }
         TextView counterView = (TextView) findViewById(R.id.txt_counter);
         counterView.setText(counterTeam1.toString());
     }
 
     public void onClickBtnAddTeam2(View view) {
-        counterTeam2++;
+        if (counterTeam2 < 20) {
+            counterTeam2++;
+        } else {
+            Toast.makeText(this, "Максимальное количество голов не должно превышать 20", Toast.LENGTH_LONG).show();
+        }
         TextView counterView2 = (TextView) findViewById(R.id.txt_counter2);
         counterView2.setText(counterTeam2.toString());
     }
