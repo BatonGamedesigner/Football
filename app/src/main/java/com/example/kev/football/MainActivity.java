@@ -1,5 +1,6 @@
 package com.example.kev.football;
 
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "StartActivity";
     public Integer counterTeam1 = 0;
     public Integer counterTeam2 = 0;
+    TextView counterView = findViewById(R.id.txt_counter);
+    TextView counterView2 = findViewById(R.id.txt_counter2);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,31 +22,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @SuppressLint("SetTextI18n")
     public void onClickBtnAddTeam1(View view) {
         if (counterTeam1 < 20) {
             counterTeam1++;
         } else {
             Toast.makeText(this, R.string.max_count, Toast.LENGTH_LONG).show();
         }
-        TextView counterView = (TextView) findViewById(R.id.txt_counter);
         counterView.setText(counterTeam1.toString());
     }
 
+    @SuppressLint("SetTextI18n")
     public void onClickBtnAddTeam2(View view) {
         if (counterTeam2 < 20) {
             counterTeam2++;
         } else {
             Toast.makeText(this, R.string.max_count, Toast.LENGTH_LONG).show();
         }
-        TextView counterView2 = (TextView) findViewById(R.id.txt_counter2);
+
         counterView2.setText(counterTeam2.toString());
     }
 
+    @SuppressLint("SetTextI18n")
     public void onClickBtnReset(View view) {
         counterTeam1 = 0;
         counterTeam2 = 0;
-        TextView counterView = (TextView) findViewById(R.id.txt_counter);
-        TextView counterView2 = (TextView) findViewById(R.id.txt_counter2);
+
         counterView.setText(counterTeam1.toString());
         counterView2.setText(counterTeam2.toString());
     }
@@ -103,10 +107,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onRestoreInstanceState");
     }
 
-
+    @SuppressLint("SetTextI18n")
     private void resetUI() {
-        ((TextView) findViewById(R.id.txt_counter)).setText(counterTeam1.toString());
-        ((TextView) findViewById(R.id.txt_counter2)).setText(counterTeam2.toString());
+        counterView.setText(counterTeam1.toString());
+        counterView2.setText(counterTeam2.toString());
         Log.d(TAG, "resetUI");
     }
 }
